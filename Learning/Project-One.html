@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+    body {
+        display: flex;
+        background-color: #282c34;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+ 
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    .clock-container {
+        text-align: center;
+        font-size: 48px;
+        border: 2px solid white;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Mobile */
+@media (max-width: 480px) {
+    .clock-container {
+        width: 90%;
+        padding: 15px;
+        font-size: 30px;
+    }
+}
+
+/* Tablet / iPad */
+@media (min-width: 481px) and (max-width: 1024px) {
+    .clock-container {
+        width: 80%;
+        padding: 20px;
+        font-size: 40px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .clock-container {
+        width: 70%;
+        padding: 20px;
+        font-size: 48px;
+    }
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) {
+    .clock-container {
+        width: 60%;
+        padding: 25px;
+        font-size: 55px;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="clock-container">
+        <h1 class="clock">00:00:00</h1>
+    </div>
+    <audio src="./Audio.mp3" preload="auto"></audio>
+    
+<script>
+
+  setInterval(() => {
+      const element = document.querySelector('.clock')
+      const sound = document.querySelector('audio')
+
+  const time = new Date();
+  const option = {
+    timeZone: 'Asia/Karachi',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  }
+
+  element.textContent = time.toLocaleTimeString('en-US',    option)
+  sound.play();
+
+  }, 1000);
+</script>  
+</body>
+</html>

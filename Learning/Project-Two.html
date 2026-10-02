@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <style>
+    body {
+   background-color: black;
+   color: white;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   font-size: 35px;
+   font-weight: bolder;
+   margin-top: 100px;
+    }
+    button {
+        height: 40px;
+        width: 15%;
+        border-radius: 10px;
+        border: none;
+        font-weight: bolder;
+        margin-top: 30px;
+    }
+
+/* Tablet */
+@media (max-width: 768px) {
+    body {
+        font-size: 28px;
+        padding: 15px;
+        margin-top: 80px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    button {
+        width: 35%;
+        height: 45px;
+        margin: 20px 5px 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        font-size: 20px;
+        padding: 10px;
+        margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    button {
+        width: 80%;
+        height: 45px;
+        margin: 12px auto;
+        display: block;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+    body {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    button {
+        width: 90%;
+        height: 42px;
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Change the Color ❤</h1>
+    <button onclick="ChangeToDark()">Change to Dark</button>
+    <button onclick="ChangeToLight()">Change to Light</button>
+    <script>
+    let ChangeToDark = () => {
+        document.body.style.background = ('black')
+        document.body.style.color = ('white')
+    }
+
+        let ChangeToLight = () => {
+        document.body.style.background = ('White')
+        document.body.style.color = ('Black')
+    }
+    </script>
+</body>
+</html>
